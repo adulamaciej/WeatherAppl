@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <title>Weather App - Error</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="alert alert-danger">
+        <h4>Error</h4>
+        <p th:text="${errorMessage}">City not found. Please check the spelling and try again.</p>
+    </div>
+    <a href="/" class="btn btn-primary">Back to Home</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .weather-container {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .weather-card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            background-color: #f8f9fa;
+        }
+
+        .weather-header {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .weather-parameter-card {
+            transition: transform 0.3s;
+            margin-bottom: 15px;
+        }
+
+        .weather-parameter-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            font-weight: 600;
+        }
+
+        .card-text {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .back-button {
+            margin-top: 20px;
+        }
+
+
+         {
+            color: #007bff !important;
+        }
+    </style>
+</head>
+<body>
+<div class="container weather-container">
+    <div class="weather-card">
+        <div class="weather-header">
+            <h1 class="city-name" th:classappend="${cityName.toLowerCase() == 'london' || cityName.toLowerCase() == 'londyn'} ? 'london-text'" th:text="${cityName}">City</h1>
+            <p class="weather-description lead" th:classappend="${cityName.toLowerCase() == 'london' || cityName.toLowerCase() == 'londyn'} ? 'london-text'" th:text="${description}">Description</p>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card weather-parameter-card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" th:classappend="${cityName.toLowerCase() == 'london' || cityName.toLowerCase() == 'londyn'} ? 'london-text'">Temperature</h5>
+                        <p class="card-text" th:classappend="${cityName.toLowerCase() == 'london' || cityName.toLowerCase() == 'londyn'} ? 'london-text'" th:text="${temperature} + '°C'">0°C</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card weather-parameter-card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" th:classappend="${cityName.toLowerCase() == 'london' || cityName.toLowerCase() == 'londyn'} ? 'london-text'">Humidity</h5>
+                        <p class="card-text" th:classappend="${cityName.toLowerCase() == 'london' || cityName.toLowerCase() == 'londyn'} ? 'london-text'" th:text="${humidity} + '%'">0%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card weather-parameter-card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" th:classappend="${cityName.toLowerCase() == 'london' || cityName.toLowerCase() == 'londyn'} ? 'london-text'">Wind Speed</h5>
+                        <p class="card-text" th:classappend="${cityName.toLowerCase() == 'london' || cityName.toLowerCase() == 'londyn'} ? 'london-text'" th:text="${windSpeed} + ' m/s'">0 m/s</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card weather-parameter-card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" th:classappend="${cityName.toLowerCase() == 'london' || cityName.toLowerCase() == 'londyn'} ? 'london-text'">Pressure</h5>
+                        <p class="card-text" th:classappend="${cityName.toLowerCase() == 'london' || cityName.toLowerCase() == 'londyn'} ? 'london-text'" th:text="${pressure} + ' hPa'">0 hPa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center back-button">
+            <a href="/" class="btn btn-primary">Back</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
