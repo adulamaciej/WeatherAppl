@@ -1,7 +1,8 @@
 # Weather-Application
 
-A simple Weather-Application that shows current weather in any given city
-Uses OpenWeatherMap API
+A simple Weather-Application that shows current weather in any given city.
+
+Source: OpenWeatherMap API
 
 Tech Stack:
 Java 21
